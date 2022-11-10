@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rsa.HelloController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Возведение в степень">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="expBase" layoutX="50.0" layoutY="81.0" prefHeight="25.0" prefWidth="122.0" />
+      <TextField fx:id="expPower" layoutX="115.0" layoutY="50.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="expMod" layoutX="296.0" layoutY="81.0" prefHeight="25.0" prefWidth="134.0" />
+      <TextField fx:id="expRem" layoutX="524.0" layoutY="81.0" />
+      <Label layoutX="239.0" layoutY="85.0" text="mod" />
+      <Line endX="669.0000610351562" layoutX="100.0" layoutY="145.0" startX="-100.0" stroke="#00000040" />
+      <Label fx:id="expError" layoutX="163.0" layoutY="118.0" text=" " textFill="#da0909" />
+      <Button layoutX="463.0" layoutY="81.0" mnemonicParsing="false" onAction="#expMod" text="=" />
+      <Label layoutX="14.0" layoutY="157.0" text="Расширенный алгоритм Евклида">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="euclidA" layoutX="28.0" layoutY="194.0" prefHeight="25.0" prefWidth="134.0" />
+      <TextField fx:id="euclidB" layoutX="251.0" layoutY="194.0" prefHeight="25.0" prefWidth="141.0" />
+      <TextField fx:id="euclidD" layoutX="524.0" layoutY="194.0" />
+      <Label layoutX="105.0" layoutY="236.0" text="x =">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="206.0" layoutY="197.0" text="+">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="197.0" text="y">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="463.0" layoutY="194.0" mnemonicParsing="false" onAction="#euclidIs" text="=" />
+      <Label fx:id="euclidError" layoutX="170.0" layoutY="270.0" text=" " textFill="#da0909" />
+      <Line endX="669.0000610351562" layoutX="100.0" layoutY="297.0" startX="-100.0" stroke="#00000040" />
+      <Label layoutX="275.0" layoutY="236.0" text="y =">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="euclidX" layoutX="131.0" layoutY="234.0" prefHeight="25.0" prefWidth="93.0" />
+      <TextField fx:id="euclidY" layoutX="317.0" layoutY="234.0" prefHeight="25.0" prefWidth="93.0" />
+      <Label layoutX="78.0" layoutY="347.0" text="-битность" />
+      <TextField fx:id="rsaSize" layoutX="28.0" layoutY="339.0" prefHeight="25.0" prefWidth="44.0" />
+      <Label layoutX="23.0" layoutY="372.0" text="p" />
+      <Label layoutX="23.0" layoutY="522.0" text="n" />
+      <Label layoutX="23.0" layoutY="492.0" text="d" />
+      <Label layoutX="23.0" layoutY="462.0" text="fi" />
+      <Label layoutX="23.0" layoutY="432.0" text="e" />
+      <Label layoutX="23.0" layoutY="402.0" text="q" />
+      <TextField fx:id="rsaP" editable="false" layoutX="50.0" layoutY="370.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="rsaQ" editable="false" layoutX="50.0" layoutY="400.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="rsaE" editable="false" layoutX="50.0" layoutY="430.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="rsaFi" editable="false" layoutX="50.0" layoutY="460.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="rsaD" editable="false" layoutX="50.0" layoutY="490.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="rsaN" editable="false" layoutX="50.0" layoutY="520.0" prefHeight="25.0" prefWidth="91.0" />
+      <Button layoutX="156.0" layoutY="343.0" mnemonicParsing="false" onAction="#generate" text="Сгенерировать" />
+      <Button layoutX="301.0" layoutY="343.0" mnemonicParsing="false" onAction="#encrypt" text="Зашифровать" />
+      <Button layoutX="501.0" layoutY="343.0" mnemonicParsing="false" onAction="#decode" text="Расшифровать" />
+      <TextArea fx:id="textIn" layoutX="151.0" layoutY="379.0" prefHeight="200.0" prefWidth="159.0" wrapText="true" />
+      <TextArea fx:id="textOut" layoutX="363.0" layoutY="379.0" prefHeight="200.0" prefWidth="159.0" wrapText="true" />
+      <TextArea fx:id="textBack" layoutX="571.0" layoutY="379.0" prefHeight="200.0" prefWidth="159.0" wrapText="true" />
+      <Label layoutX="14.0" layoutY="309.0" text="RSA">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="language" layoutX="172.0" layoutY="307.0" mnemonicParsing="false" onAction="#changeLanguage" text="Русский" />
+      <Label layoutX="120.0" layoutY="310.0" text="Язык">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="392.0" layoutY="307.0" mnemonicParsing="false" onAction="#clear" text="Очистить" />
+      <Label fx:id="rsaError" layoutX="163.0" layoutY="587.0" text=" " textFill="#da0909" />
+      <Label layoutX="174.0" layoutY="197.0" text="x">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
