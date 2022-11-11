@@ -8,6 +8,9 @@ public class Alphabet {
             al="абвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789";
         else
             al = "abcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder updatedAl = new StringBuilder(al);
+        updatedAl.insert(0, Character.MIN_VALUE);
+        al = updatedAl.toString();
     }
 
     public static boolean checkString(String text)

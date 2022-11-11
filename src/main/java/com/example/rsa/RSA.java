@@ -44,8 +44,8 @@ public class RSA {
             for(int i = 0; i < text.length(); i++)
             {
                 StringBuilder binaryCh = new StringBuilder(
-                        Integer.toBinaryString(Alphabet.al.indexOf(text.charAt(i)) + 1));
-                int addNules = Integer.toBinaryString(Alphabet.al.length() + 1).length() - binaryCh.length();
+                        Integer.toBinaryString(Alphabet.al.indexOf(text.charAt(i))));
+                int addNules = Integer.toBinaryString(Alphabet.al.length()).length() - binaryCh.length();
                 for(int j = 0;j < addNules; j++)
                     binaryCh.insert(0, "0");
                 bin.append(binaryCh);
@@ -63,7 +63,7 @@ public class RSA {
         for(int i = 0; i < binary.length(); i+=power)
         {
             int a = Integer.parseInt(binary.substring(i, i+power), 2) % Alphabet.al.length();
-            result.append(Alphabet.al.charAt((a + Alphabet.al.length() - 1) % Alphabet.al.length()));
+            result.append(Alphabet.al.charAt((a) % Alphabet.al.length()));
         }
         return result.toString();
     }
